@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Hello from evolution</title>
+	<link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}" type="text/css">
+</head>
+
+<body>
+	<p>before starting, write down a nickname, something to recognise you when we analyse the results</p>	
+	<form method='post'>
+			<input type=text name=nickname value="">
+		
+			{% if debug %}
+				<input type=text name=username value={{ hashCode }}>
+			{% else %}
+				<input type=hidden name=username value={{ hashCode }}>
+			{% endif %}
+			<input type=submit value="Submit!">
+	</form>
+
+</body>
+
+</html>
+
